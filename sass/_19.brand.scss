@@ -1,0 +1,42 @@
+.brand {
+  grid-column: container-start / container-end;
+  padding: 3rem 0 6rem;
+  &__container {
+    padding: 3.5rem 1.5rem 0;
+    max-width: 114rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    button {
+      // flex-basis: 3.4rem;
+      width: 3.4rem;
+      height: 3.4rem;
+      border: none;
+      background-color: var(--color-primary);
+      cursor: pointer;
+      i {
+        color: var(--color-white);
+      }
+    }
+    button:hover {
+      background-color: #000;
+    }
+    &--carousel {
+      // flex: 1;
+      max-width: calc(100% - 6.8rem);
+      flex-basis: calc(100% - 6.8rem);
+      // margin-top: 3rem;
+      .items {
+        padding: 0 2rem;
+        .item {
+          padding: 2rem 0;
+          filter: grayscale(100%);
+          &:hover {
+            box-shadow: 0 0 10px #ccc;
+            filter: grayscale(0);
+          }
+        }
+      }
+    }
+  }
+}

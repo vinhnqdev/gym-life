@@ -1,0 +1,159 @@
+.motto {
+  grid-column: container-start / container-end;
+  background-color: #f5f5f5;
+  padding-top: 6rem;
+  &__container {
+    height: 100%;
+    max-width: 114rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 0;
+    position: relative;
+    &--img {
+      max-width: 540px;
+      aspect-ratio: 642 / 523;
+      margin-bottom: -5px;
+      img {
+        width: 100%;
+        height: auto;
+        transition: all 0.5s ease-in;
+      }
+      img:hover {
+        opacity: 0.8;
+      }
+    }
+    &--content {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding-bottom: 5rem;
+      &__title {
+        font-family: var(--font-san-serif);
+        font-weight: 500;
+        font-size: 10rem;
+        line-height: 11rem;
+        letter-spacing: 0.1;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        span {
+          color: var(--color-primary);
+        }
+      }
+      &__para {
+        font-weight: get-font-weight(semi-bold);
+        font-size: 4.8rem;
+        line-height: 4rem;
+        letter-spacing: 5.2rem;
+        text-transform: uppercase;
+        color: var(--color-other);
+        margin-bottom: 2rem;
+      }
+      &__link {
+        display: inline-block;
+        padding: 1.5rem 6rem;
+        font-weight: get-font-weight(semi-bold);
+        color: var(--color-white);
+        background-color: var(--color-primary);
+        font-size: 1.6rem;
+        border-radius: 4.9rem;
+        text-transform: uppercase;
+        &:hover {
+          background-color: var(--color-primary-m);
+        }
+      }
+    }
+  }
+  @include media-large() {
+    &__container {
+      &--content {
+        &__title {
+          font-size: 7rem;
+          line-height: 7rem;
+        }
+        &__para {
+          font-size: 4rem;
+          line-height: 3.5rem;
+          letter-spacing: 3.5rem;
+          margin-bottom: 2.5rem;
+        }
+        &__link {
+          padding: 1.5rem 5rem;
+        }
+      }
+    }
+  }
+
+  @include media-medium() {
+    &__container {
+      &--content {
+        &__title {
+          font-size: 6rem;
+          line-height: 6rem;
+        }
+        &__para {
+          font-size: 3rem;
+          line-height: 3rem;
+          letter-spacing: 2.8rem;
+          margin-bottom: 2rem;
+        }
+        &__link {
+          padding: 1rem 3rem;
+        }
+      }
+      &--img {
+        max-width: 33rem;
+      }
+    }
+  }
+  @include media-small() {
+    &__container {
+      padding: 3.5rem 0 0 0;
+      &--content {
+        overflow: hidden;
+        padding-bottom: 2rem;
+        &__title {
+          font-size: 5rem;
+          line-height: 5rem;
+        }
+        &__para {
+          font-size: 2.5rem;
+          line-height: 2.5rem;
+          letter-spacing: 2rem;
+        }
+      }
+      &--img {
+        padding: 6rem 4rem 6rem 0;
+      }
+    }
+  }
+  @include media-small() {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3.5rem 0 0 0;
+      &--content {
+        position: static;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // &__title {
+        //   font-size: 6rem;
+        //   line-height: 6rem;
+        // }
+        // &__para {
+        //   font-size: 3rem;
+        //   line-height: 3rem;
+        //   letter-spacing: 2.8rem;
+        //   margin-bottom: 2rem;
+        // }
+      }
+      &--img {
+        max-width: 100%;
+        padding: 6rem 0 6rem 0;
+      }
+    }
+  }
+}

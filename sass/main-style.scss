@@ -1,0 +1,162 @@
+//*-*-*-*-*-*-*-*-*-*-- The 1200px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-large {
+  @media screen and (max-width: get-break-point(large)) {
+    @content;
+  }
+}
+//*-*-*-*-*-*-*-*-*-*-- The 992px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-medium {
+  @media screen and (max-width: get-break-point(medium)) {
+    @content;
+  }
+}
+//*-*-*-*-*-*-*-*-*-*-- The 768px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-small {
+  @media screen and (max-width: get-break-point(small)) {
+    @content;
+  }
+}
+@mixin media-xsmall {
+  @media screen and (max-width: get-break-point(x-small)) {
+    @content;
+  }
+}
+
+@import "1.reset";
+@import "2.variables";
+@import "3.utility";
+@import "4.header";
+@import "5.hero";
+@import "6.about-left";
+@import "7.about-right";
+@import "8.feature";
+@import "9.motto";
+@import "10.schedule";
+@import "11.clients";
+@import "12.trainers";
+@import "13.bmi";
+@import "14.gallery";
+@import "15.register";
+@import "16.store";
+@import "17.discount";
+@import "18.post";
+@import "19.brand";
+@import "20.footer";
+
+// Place Holder
+%padding-sec {
+  padding: 6.5rem 0 10rem;
+}
+
+%style-heading {
+  font-family: var(--font-san-serif);
+  color: var(--color-white);
+  font-size: 2.8rem;
+  line-height: 3.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+//*-*-*-*-*-*-*-*-*-*-- Container Fluid *-*-*-*-*-*-*-*-*-*-*
+//*-*-*-*-*-*-*-*-*-*-- Media Query 992px ->>> 1200px *-*-*-*-*-*-*-*-*-*-*
+@include media-large {
+  .header__container,
+  .feature__container,
+  .motto__container,
+  .schedule__container,
+  .clients__container,
+  .trainers__container,
+  .bmi__container,
+  .register__container,
+  .gallery__container,
+  .store__container,
+  .discount__container,
+  .post__container,
+  .brand__container,
+  footer > .footer__top-area > .footer__container {
+    max-width: 98rem;
+    margin: 0 auto;
+  }
+}
+//*-*-*-*-*-*-*-*-*-*-- Media Query 768px ->>> 992px *-*-*-*-*-*-*-*-*-*-*
+@include media-medium {
+  .feature__container,
+  .motto__container,
+  .schedule__container,
+  .clients__container,
+  .trainers__container,
+  .bmi__container,
+  .register__container,
+  .gallery__container,
+  .store__container,
+  .discount__container,
+  .post__container,
+  .brand__container,
+  footer > .footer__top-area > .footer__container {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+}
+//*-*-*-*-*-*-*-*-*-*-- Media Query 540px ->>> 768px *-*-*-*-*-*-*-*-*-*-*
+@include media-small {
+  .feature__container,
+  .motto__container,
+  .schedule__container,
+  .clients__container,
+  .trainers__container,
+  .bmi__container,
+  .register__container,
+  .gallery__container,
+  .store__container,
+  .discount__container,
+  .post__container,
+  .brand__container,
+  footer > .footer__top-area > .footer__container {
+    max-width: 54rem;
+    margin: 0 auto;
+  }
+}
+//*-*-*-*-*-*-*-*-*-*-- Media Query < 576px *-*-*-*-*-*-*-*-*-*-*
+@include media-xsmall {
+  .feature__container,
+  .motto__container,
+  .schedule__container,
+  .clients__container,
+  .trainers__container,
+  .bmi__container,
+  .register__container,
+  .gallery__container,
+  .store__container,
+  .discount__container,
+  .post__container,
+  .brand__container,
+  footer > .footer__top-area > .footer__container {
+    max-width: 100%;
+  }
+}
+
+//  ------------------------------ Scroll Top When Clicking --------------------------------------------//
+
+.scroll {
+  position: fixed;
+  z-index: 100;
+  cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  bottom: 65rem;
+  opacity: 0;
+  visibility: hidden;
+  right: 4rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  background-image: url("../img/scroll/scroll.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.scroll.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 4rem;
+}

@@ -1,0 +1,42 @@
+.about-right {
+  grid-column: col-start 4 / container-end;
+  padding-left: 3rem;
+  background-color: #f5f5f5;
+  &__content {
+    padding: 9.5rem 1.5rem 4rem;
+    &--inner {
+      display: flex;
+      margin-bottom: 2rem;
+      i {
+        font-size: 2.8rem;
+        color: var(--color-primary);
+      }
+      div {
+        padding-left: 1rem;
+        h3 {
+          color: var(--color-black);
+          font-size: 2.2rem;
+          font-family: var(--font-san-serif);
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: 1.2;
+        }
+        p {
+          padding: 2rem 0;
+          font-size: 1.5rem;
+          color: var(--color-black-l);
+          line-height: 2.6rem;
+        }
+      }
+    }
+  }
+  @include media-small {
+    grid-column: container-start / container-end;
+  }
+  @include media-xsmall {
+    padding-left: 0;
+  }
+  &__content {
+    padding-top: 5rem;
+  }
+}

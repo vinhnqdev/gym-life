@@ -1,0 +1,89 @@
+.trainers {
+  grid-column: container-start / container-end;
+  background-image: url("../img/trainers/trainer-bg.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  @extend %padding-sec;
+  &__container {
+    height: 100%;
+    max-width: 114rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 0;
+    &--corousel {
+      .trainers__item {
+        position: relative;
+        margin-bottom: 4.5rem;
+        &--top {
+          border-radius: 2rem;
+          position: relative;
+          overflow: hidden;
+          .trainers__item--socials {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-120%);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            i {
+              width: 4rem;
+              height: 4rem;
+              color: var(--color-white);
+              border-radius: 50%;
+              border: 0.2rem var(--color-primary) solid;
+              margin-left: 0.2rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.4rem;
+              cursor: pointer;
+              transition: all 0.3s ease-in;
+            }
+            i:hover,
+            i:active {
+              background-color: var(--color-primary);
+            }
+          }
+        }
+        &--info {
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          transform: translate(-50%, -50%);
+          background-color: var(--color-primary);
+          color: var(--color-white);
+          width: 80%;
+          text-align: center;
+          padding: 1.5rem 0;
+          border-radius: 2rem;
+          &__name {
+            font-size: 2rem;
+            font-weight: 600;
+          }
+          &__speciality {
+            font-size: 1.4rem;
+          }
+        }
+        &:hover .trainers__item--socials,
+        &:active .trainers__item--socials {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @include media-medium() {
+    .trainers__item--info__name {
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+    .trainers__item--info__speciality {
+      font-size: 1.3rem;
+    }
+  }
+}

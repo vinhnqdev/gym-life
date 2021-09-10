@@ -1,0 +1,123 @@
+:root {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+  background-color: var(--color-white);
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [container-start] 1fr [center-start] repeat(
+      6,
+      [col-start] minmax(min-content, 20rem) [col-end]
+    )
+    [center-end] 1fr [container-end];
+  grid-template-rows: max-content repeat(17, max-content);
+
+  // The height of The HERO section is computed in the hero.js file.
+}
+
+// Link
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--color-white);
+}
+// List
+li {
+  list-style: none;
+}
+
+// Common
+// Gym Header
+.gymlife__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  .gymlife__heading {
+    font-size: 30px;
+    padding-right: 65px;
+    color: var(--color-black);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: get-font-weight("semi-bold");
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      height: 0.2rem;
+      width: 69rem;
+      background-color: #e8e8e8;
+    }
+  }
+  .gymlife__nav {
+    button {
+      width: 3.4rem;
+      height: 3.4rem;
+      border: none;
+      background-color: var(--color-primary);
+      cursor: pointer;
+      i {
+        color: var(--color-white);
+      }
+    }
+    button:hover {
+      background-color: #000;
+    }
+  }
+}
+@include media-large() {
+  .gymlife__header {
+    .gymlife__heading {
+      &:after {
+        left: 45%;
+        top: 130%;
+      }
+    }
+  }
+}
+@include media-medium() {
+  .gymlife__header {
+    .gymlife__heading {
+      &:after {
+        left: 0;
+      }
+    }
+  }
+}
+@include media-small() {
+  .gymlife__header {
+    .gymlife__heading {
+      font-size: 2.5rem;
+      &:after {
+        left: 3%;
+        width: 30rem;
+      }
+    }
+  }
+}
+@include media-xsmall() {
+  .gymlife__header {
+    .gymlife__heading {
+      font-size: 2rem;
+      padding-right: 0;
+      margin-bottom: 0;
+      &:after {
+        left: 3%;
+        width: 25rem;
+      }
+    }
+    .gymlife__nav {
+      .btn {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
